@@ -9,14 +9,15 @@ import { SearchService } from '../Search/search.service'
 })
 export class SearchComponent implements OnInit {
   searchService:SearchService;
+  let msg:string;
 
-  constructor( private searchService:SearchService)
- {
-   this.searchService=SearchService;
- }
 
-  ngOnInit() {
+ //  constructor( searchService:SearchService)
+ // {
+ // }
 
-  }
-
-}
+//   ngOnInit() {
+//     // this.msg=this.SearchService
+//   }
+//
+// }
