@@ -4,8 +4,8 @@
   </div>
   <form class="">
     <div class="form-group">
-      <input type="textarea" class="form-control" value="" placeholder="Enter your Search Item Here">
-      <button type="button" class="btn btn-info">Enter</button>
+      <input type="textarea" class="form-control" value="" placeholder="Enter your Search Item Here"(keyup)='type($event)'>
+      <button type="button" class="btn btn-info"(click)='getProfile()'>Get Profile</button>
     </div>
   </form>
 </div>

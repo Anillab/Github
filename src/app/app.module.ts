@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import {SearchService} from './Search/search.service'
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { SearchComponent } from './search/search.component';
     SearchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
