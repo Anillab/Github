@@ -10,6 +10,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SearchComponent implements OnInit {
   name:string='';
+  getProfile(){
+
+      this.httpClient.get('https://api.github.com/search/repositories?q=users&order=desc').subscribe(
+        (data:any[])=>{
+          console.log(data)
+        }
+      )
+
+
+
+  }
+
 
 
 
@@ -17,17 +29,7 @@ constructor (private searchService:SearchService,private httpClient:HttpClient) 
 type(event:any){
   this.name=event.target.value;
 }
-getProfile(){
 
-    this.httpClient.get('https://api.github.com/search/repositories?q=users&order=desc').subscribe(
-      (data:any[])=>{
-        console.log(data)
-      }
-    )
-
-
-
-}
 
 ngOnInit(){}
 }
