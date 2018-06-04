@@ -11,6 +11,9 @@
     </div>
   </form>
 </div>
-<div *ngIf="username" class="row">
-  <p>{{username.name}}</p>
+<div *ngIf="myprofile" class="row">
+  <img src="{{myprofile.avatar}}">
+  <p>Followers: {{myprofile.followers}}</p>
+    <p>Following: {{myprofile.following}}</p>
+    <!-- <p>{{myprofile.url}}</p> -->
 </div>

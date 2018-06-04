@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import {User} from "../user"
 // import 'rxjs/add/operator/map';
 
 @Injectable({
@@ -11,8 +12,7 @@ export class SearchService{
   public token: string = environment.token;
   private username: string;
   public profile:any
-
-
+  public myprofile:User=new User('','','','','')
 constructor (private httpClient:HttpClient) {
 
 }
@@ -22,6 +22,10 @@ userFind(uname){
       this.httpClient.get('https://api.github.com/users/' + this.username + "?api_token=" + this.token ).toPromise().then(
         results =>{
             this.profile=results;
+            this.myprofile.avatar=results["avatar_url"]
+            this.myprofile.followers=results["followers"]
+            this.myprofile.following=results["following"]
+            // this.myprofile.url=results["url"]
             console.log(this.profile)
             resolve()
         },
@@ -34,6 +38,8 @@ userFind(uname){
     })
       return myPromise;
       }
+
+
     }
       // userUpdate(username:string){
       //   this.username=username;
