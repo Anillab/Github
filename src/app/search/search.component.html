@@ -1,11 +1,16 @@
 <div class="container" id="one">
   <div class="">
     <h1>GitHub Search!</h1>
+
   </div>
+  <!-- {{item.fullnam} -->
   <form class="">
     <div class="form-group">
-      <input type="textarea" class="form-control" value="" placeholder="Enter your Search Item Here"(keyup)='type($event)'>
-      <button type="button" class="btn btn-info"(click)='getProfile()'>Get Profile</button>
+      <input type="textarea" class="form-control" value="" name="searchname" placeholder="Enter your Search Item Here" [(ngModel)]="username">
+      <button class="btn btn-info" (click)='userFind()'>Get Profile</button>
     </div>
   </form>
+</div>
+<div *ngIf="username" class="row">
+  <p>{{username.name}}</p>
 </div>

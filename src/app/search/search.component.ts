@@ -9,27 +9,22 @@ import { HttpClient } from '@angular/common/http';
   providers:[SearchService]
 })
 export class SearchComponent implements OnInit {
-  name:string='';
-  getProfile(){
-
-      this.httpClient.get('https://api.github.com/search/repositories?q=users&order=desc').subscribe(
-        (data:any[])=>{
-          console.log(data)
-        }
-      )
+  // name:string='';
+  profile:any[];
+  username:string;
 
 
 
-  }
+constructor (private searchService:SearchService) {}
+
+userFind(){
+  // this.SearchService.userUpdate(this.username);
+  this.searchService.userFind(this.username)
+    this.profile =   this.searchService.profile
+  };
 
 
+ngOnInit(){
 
-
-constructor (private searchService:SearchService,private httpClient:HttpClient) {}
-type(event:any){
-  this.name=event.target.value;
 }
-
-
-ngOnInit(){}
 }

@@ -4,6 +4,7 @@ import {SearchService} from './Search/search.service'
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
