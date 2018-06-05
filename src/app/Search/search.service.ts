@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {User} from "../user"
-// import 'rxjs/add/operator/map';
+import {Repo} from "../repo"
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,9 @@ export class SearchService{
   public token: string = environment.token;
   private username: string;
   public profile:any
-  public myprofile:User=new User('','','','','')
+  public myprofile:User=new User('',0,'','','','','','')
+  public myrepo:Repo=new Repo ()
+  public findrepositories:any
 constructor (private httpClient:HttpClient) {
 
 }
@@ -44,7 +46,7 @@ findRepo(uname,show){
   let promise = new Promise((resolve,reject)=>{
     this.httpClient.get('https://api.github.com/repositories?q=' + this.username +"&per_page="+show+"&sort=forks&order=asc?access_token=" + this.token ).toPromise().then(
       reporesults=>{
-        this.findrepositories=reporesults.items;
+        this.findrepositories=reporesults;
         resolve();
       },
       error=>{
