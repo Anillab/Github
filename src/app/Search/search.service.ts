@@ -42,9 +42,10 @@ userFind(uname){
     })
       return myPromise;
       }
-findRepo(uname,show){
+findRepo(total){
+  this.username=total;
   let promise = new Promise((resolve,reject)=>{
-    this.httpClient.get('https://api.github.com/repositories?q=' + this.username +"&per_page="+show+"&sort=forks&order=asc?access_token=" + this.token ).toPromise().then(
+    this.httpClient.get('https://api.github.com/repositories?q=' + this.username +"&per_page=&sort=forks&order=asc?access_token=" + this.token ).toPromise().then(
       reporesults=>{
         this.findrepositories=reporesults;
         resolve();

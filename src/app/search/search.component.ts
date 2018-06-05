@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../Search/search.service'
 import { HttpClient } from '@angular/common/http';
 import {User} from "../user";
+import {Repo} from "../repo"
 
 @Component({
   selector: 'app-search',
@@ -24,6 +25,10 @@ userFind(){
     this.profile =   this.searchService.profile
 
   };
+findRepo(){
+  this.searchService.findRepo(this.total).then(()=>{})
+  this.reporesults=this.searchService.repositories
+}
 
 
 ngOnInit(){
