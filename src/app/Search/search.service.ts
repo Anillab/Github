@@ -19,7 +19,7 @@ constructor (private httpClient:HttpClient) {
 userFind(uname){
     this.username = uname;
     let myPromise = new Promise((resolve,reject) => {
-      this.httpClient.get('https://api.github.com/users/' + this.username + "?api_token=" + this.token ).toPromise().then(
+      this.httpClient.get('https://api.github.com/users/' + this.username + "?access_token=" + this.token ).toPromise().then(
         results =>{
             this.profile=results;
             this.myprofile.avatar=results["avatar_url"]
@@ -40,6 +40,25 @@ userFind(uname){
     })
       return myPromise;
       }
+findRepo(uname,show){
+  let promise = new Promise((resolve,reject)=>{
+    this.httpClient.get('https://api.github.com/repositories?q=' + this.username +"&per_page="+show+"&sort=forks&order=asc?access_token=" + this.token ).toPromise().then(
+      reporesults=>{
+        this.findrepositories=reporesults.items;
+        resolve();
+      },
+      error=>{
+        this.findrepositories="error"
+        reject(error);
+      }
+    )
+
+  }
+
+  )
+  return promise;
+}
+
 
 
     }
