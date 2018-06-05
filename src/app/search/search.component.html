@@ -14,6 +14,7 @@
 <div *ngIf="myprofile" class="row">
   <img src="{{myprofile.avatar}}">
   <p>Followers: {{myprofile.followers}}</p>
-    <p>Following: {{myprofile.following}}</p>
-    <!-- <p>{{myprofile.url}}</p> -->
+    <p>Following: {{myprofile.following}}</p><br>
+    <a href="{myprofile.html_url}}">{{myprofile.login}}</a>
+    <p>Location:{{myprofile.location}}</p>
 </div>

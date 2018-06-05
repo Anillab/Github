@@ -25,7 +25,9 @@ userFind(uname){
             this.myprofile.avatar=results["avatar_url"]
             this.myprofile.followers=results["followers"]
             this.myprofile.following=results["following"]
-            // this.myprofile.url=results["url"]
+            this.myprofile.html_url=results["html_url"]
+            this.myprofile.login=results["login"]
+            this.myprofile.location=results["location"]
             console.log(this.profile)
             resolve()
         },
