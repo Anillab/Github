@@ -16,20 +16,26 @@ export class SearchComponent implements OnInit {
   profile:any[];
   username:string;
   reporesults:any;
+
 constructor (private searchService:SearchService) {}
+
+findRepo(){
+  this.searchService.findRepo(this.username).then(()=>{
+    this.reporesults=this.searchService.newRepo
+  })
+
+}
 
 userFind(){
   // this.SearchService.userUpdate(this.username);
   this.searchService.userFind(this.username).then(()=>{
     this.myprofile=this.searchService.myprofile
+    this.findRepo()
 })
     this.profile =   this.searchService.profile
 
   };
-findRepo(){
-  this.searchService.findRepo(this.username).then(()=>{})
-  this.reporesults=this.searchService
-}
+
 
 
 ngOnInit(){
