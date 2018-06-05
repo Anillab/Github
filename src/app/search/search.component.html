@@ -10,13 +10,15 @@
       <button class="btn btn-info" (click)='userFind()'>Get Profile</button>
     </div>
   </form>
-</div>
 <div *ngIf="myprofile" class="row">
   <img src="{{myprofile.avatar}}">
   <p>Followers: {{myprofile.followers}}</p>
     <p>Following: {{myprofile.following}}</p><br>
     <a href="{myprofile.html_url}}">{{myprofile.login}}</a>
     <p>Location:{{myprofile.location}}</p>
+  <div *ngIf="myResults">
     <button class="btn" (click)='findRepo()'>Respitories</button>
-
+    <p>{{myResults.description}}</p>
+  </div>
+  </div>
 </div>

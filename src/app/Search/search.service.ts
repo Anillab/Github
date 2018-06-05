@@ -13,8 +13,9 @@ export class SearchService{
   private username: string;
   public profile:any
   public myprofile:User=new User('',0,'','','','','','')
-  public myrepo:Repo=new Repo ()
+  public myrepo:Repo=new Repo ('','',new Date())
   public findrepositories:any
+  public myResults:any
 constructor (private httpClient:HttpClient) {
 
 }
@@ -42,12 +43,12 @@ userFind(uname){
     })
       return myPromise;
       }
-findRepo(total){
-  this.username=total;
+findRepo(username){
   let promise = new Promise((resolve,reject)=>{
     this.httpClient.get('https://api.github.com/repositories?q=' + this.username +"&per_page=&sort=forks&order=asc?access_token=" + this.token ).toPromise().then(
       reporesults=>{
         this.findrepositories=reporesults;
+        this.myResults.description=reporesults["description"]
         resolve();
       },
       error=>{

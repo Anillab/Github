@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
   myprofile:User;
   profile:any[];
   username:string;
+  reporesults:any;
 constructor (private searchService:SearchService) {}
 
 userFind(){
@@ -26,8 +27,8 @@ userFind(){
 
   };
 findRepo(){
-  this.searchService.findRepo(this.total).then(()=>{})
-  this.reporesults=this.searchService.repositories
+  this.searchService.findRepo(this.username).then(()=>{})
+  this.reporesults=this.searchService
 }
 
 
