@@ -1,10 +1,10 @@
-<!-- <div class="container" id="one">
+<div class="container" id="one">
   <div class="">
     <h1>GitHub Search!</h1>
 
   </div>
-  {{item.fullnam}
-  <!- <form class="">
+  <!-- {{item.fullnam} -->
+  <form class=form-control>
     <div class="form-group">
       <input type="textarea" class="form-control" value="" name="searchname" placeholder="Enter your Search Item Here" [(ngModel)]="username">
       <button class="btn btn-info" (click)='userFind()'>Get Profile</button>
@@ -16,21 +16,28 @@
     <p>Following: {{myprofile.following}}</p><br>
     <a href="{myprofile.html_url}}">{{myprofile.login}}</a>
     <p>Location:{{myprofile.location}}</p>
-    <p>Repositories:{{myprofile.public_repos}}</p>
-    <ul ngFor=let repo of public_repos>
-      <li>{{repo.name}}</li>
-    </ul>
-  </div> -->
-
-<!-- <div *ngIf="reporesults">
-  <div ngFor="let repo of searchService.findrepositories">
-    <div class="row">
-      <p>{{ repo.}}</p>
+    <div *ngIf="searchService.newRepo">
+      <h3 >Repositories</h3>
+      <div>
+        <table>
+          <tbody>
+            <tr *ngFor='let repository of searchService.newRepo'>
+              <td>
+                <a href="{{repository.html_url}}" target="_blank" >{{repository.name}}</a>
+                <br>
+                <p >Description: {{repository.description}}</p>
+                <br>
+                <p>Date Created: {{repository.created_at | date}}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-</div> -->
-<!-- </div> -->
-<div class="container">
+  </div> 
+
+
+<!-- <!- <div class="container>
   <div class="row">
     <div *ngIf="searchService.newRepo">
       <h3 >Repositories</h3>
@@ -51,4 +58,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> --> -->
