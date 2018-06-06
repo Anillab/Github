@@ -11,7 +11,6 @@ import {Repo} from "../repo"
   providers:[SearchService]
 })
 export class SearchComponent implements OnInit {
-  // name:string='';
   myprofile:User;
   profile:any[];
   username:string;
@@ -27,7 +26,6 @@ findRepo(){
 }
 
 userFind(){
-  // this.SearchService.userUpdate(this.username);
   this.searchService.userFind(this.username).then(()=>{
     this.myprofile=this.searchService.myprofile
     this.findRepo()

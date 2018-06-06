@@ -1,9 +1,8 @@
 <div class="container" id="one">
-  <div class="">
-    <h1>GitHub Search!</h1>
+  <div class="header">
+    <h1 id="gh">GitHub Search!</h1>
 
   </div>
-  <!-- {{item.fullnam} -->
   <form class=form-control>
     <div class="form-group">
       <input type="textarea" class="form-control" value="" name="searchname" placeholder="Enter your Search Item Here" [(ngModel)]="username">
@@ -34,28 +33,4 @@
         </table>
       </div>
     </div>
-  </div> 
-
-
-<!-- <!- <div class="container>
-  <div class="row">
-    <div *ngIf="searchService.newRepo">
-      <h3 >Repositories</h3>
-      <div>
-        <table>
-          <tbody>
-            <tr *ngFor='let repository of searchService.newRepo'>
-              <td>
-                <a href="{{repository.html_url}}" target="_blank" >{{repository.name}}</a>
-                <br>
-                <p >Description: {{repository.description}}</p>
-                <br>
-                <p>Date Created: {{repository.created_at | date}}</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
   </div>
-</div> --> -->

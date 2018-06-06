@@ -4,8 +4,6 @@ import { RouterModule, Routes} from '@angular/router';
 import {HttpClient} from '@angular/common/http'
 import { SearchComponent } from '../search/search.component';
 import { RoutingModule } from './routing/routing.module';
-//import { NotFoundComponent } from '../not-found/not-found.component';
-
 
 const routes:Routes=[
   {path:"users",component:SearchComponent},

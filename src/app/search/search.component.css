@@ -1,3 +1,10 @@
 #one{
   background-color: #F5F5F5;
 }
+div.header{
+  background-color: black;
+}
+#gh{
+  color: white;
+  text-align: center;
+}
