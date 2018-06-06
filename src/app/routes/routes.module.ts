@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes} from '@angular/router';
 import {HttpClient} from '@angular/common/http'
 import { SearchComponent } from '../search/search.component';
-import { RoutingModule } from './routing/routing.module';
 
 const routes:Routes=[
   {path:"users",component:SearchComponent},
   {path:"",redirectTo:"/users",pathMatch:"full"},
-  //{path:'**',component:NotFoundComponent}
 ]
 
 @NgModule({

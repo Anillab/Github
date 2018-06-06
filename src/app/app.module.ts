@@ -5,14 +5,12 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NotFoundComponent } from './not-found/not-found.component';
-
+import {RouterModule,Routes} from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    NotFoundComponent
   ],
   imports: [
     BrowserModule,
